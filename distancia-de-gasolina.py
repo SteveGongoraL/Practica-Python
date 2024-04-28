@@ -1,17 +1,16 @@
-distancia=(int(input("Cual es la distancia del viaje: ")))
-precioGasofia=(float(input("Cuál es el precio de la gasolina en este dia: ")))
+print("\n-- Simulador de costo de gasolina por viaje --")
 
-velocidadConstante=int(100)
-consumoporlitro=int(12)
+distancia = (int(input("¿Cual es la distancia del viaje?: ")))
+precio_gasolina = (float(input("¿Cuál es el precio de la gasolina en este dia?: ")))
 
-tiempotardado=((distancia/velocidadConstante)*3600)
-horas=(int(tiempotardado/3600))
-minutos=int((tiempotardado-(horas*3600))/60)
+velocidad_constante = 100
+consumo_por_litro = 12
 
-consumogenerado=(distancia/consumoporlitro)
-saldogenerado=(consumogenerado*precioGasofia)
-saldofinal=("{0:.2f}".format(saldogenerado))
+tiempo_tardado = ((distancia / velocidad_constante) * 3600)
+horas_viaje = (int(tiempo_tardado / 3600))
+minutos_viaje = int((tiempo_tardado - (horas_viaje * 3600)) / 60)
 
-respuesta=("Su viaje durara {} horas, {} minutos y tendra un costo de ${}")
+consumo_generado = (distancia / consumo_por_litro)
+saldo_generado = (consumo_generado * precio_gasolina)
 
-print(respuesta.format(horas,minutos,saldofinal))
+print(f"Su viaje durara {horas_viaje} horas, {minutos_viaje} minutos y tendra un costo de ${saldo_generado}")
